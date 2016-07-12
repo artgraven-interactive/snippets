@@ -10,17 +10,16 @@ class blApi {
                 curl_setopt($ch, CURLOPT_FAILONERROR, 1);
                 curl_setopt($ch, CURLOPT_TIMEOUT, 120);
                 curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
+                curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
 
           $fd = curl_exec($ch);
 
           if(curl_error($ch)){
           //handle error
               $josn_string = curl_error($ch)."<hr/>";
-              //echo $josn_string;
               return $josn_string;
           }else{
           //handle success
-             // echo 'success';
                 return $fd;
           }
     }
