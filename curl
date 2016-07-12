@@ -20,7 +20,7 @@ class blApi {
               return $josn_string;
           }else{
           //handle success
-              echo 'success';
+             // echo 'success';
                 return $fd;
           }
     }
